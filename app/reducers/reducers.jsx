@@ -1,4 +1,4 @@
-var uuid = require('uuid');
+var uuid = require('node-uuid');
 
 export var searchTextReducer = (state = '', action) => {
     switch (action.type) {
@@ -37,6 +37,8 @@ export var todosReducer = (state = [], action) => {
                         ...todo,
                         completed: nextCompleted,
                     };
+                } else {
+                    return todo;
                 }
             });
         default:
